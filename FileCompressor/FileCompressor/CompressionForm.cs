@@ -80,6 +80,16 @@ namespace FileCompressor
         {
             this.SetAllTargetFilesSelectionState(false);
         }
+
+        /// <summary>
+        /// 圧縮ファイル出力先フォルダパス参照Button_Click
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="e">EventArgs</param>
+        private void buttonOutputDirectoryPathDialog_Click(object sender, EventArgs e)
+        {
+            this.ShowDialogAndSetPath(this.folderBrowserDialogOutput, this.textBoxOutputDirectoryPath);
+        }
         #endregion
 
         #region メソッド

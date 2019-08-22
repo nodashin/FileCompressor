@@ -175,6 +175,7 @@
             this.buttonOutputDirectoryPathDialog.TabIndex = 12;
             this.buttonOutputDirectoryPathDialog.Text = "参照";
             this.buttonOutputDirectoryPathDialog.UseVisualStyleBackColor = true;
+            this.buttonOutputDirectoryPathDialog.Click += new System.EventHandler(this.buttonOutputDirectoryPathDialog_Click);
             // 
             // textBoxOutputDirectoryPath
             // 
