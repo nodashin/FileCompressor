@@ -43,6 +43,8 @@
             this.textBoxOutputDirectoryPath = new System.Windows.Forms.TextBox();
             this.checkBoxOutptDirectoryPath = new System.Windows.Forms.CheckBox();
             this.buttonCompression = new System.Windows.Forms.Button();
+            this.folderBrowserDialogInput = new System.Windows.Forms.FolderBrowserDialog();
+            this.folderBrowserDialogOutput = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // labelInputInputDeitectoryPath
@@ -195,6 +197,14 @@
             this.buttonCompression.Text = "圧縮";
             this.buttonCompression.UseVisualStyleBackColor = false;
             // 
+            // folderBrowserDialogInput
+            // 
+            this.folderBrowserDialogInput.Description = "圧縮するファイルが格納されているフォルダのパスを指定してください";
+            // 
+            // folderBrowserDialogOutput
+            // 
+            this.folderBrowserDialogOutput.Description = "圧縮したファイルを出力するフォルダのパスを指定してください";
+            // 
             // CompressionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
@@ -242,6 +252,8 @@
         private System.Windows.Forms.TextBox textBoxOutputDirectoryPath;
         private System.Windows.Forms.CheckBox checkBoxOutptDirectoryPath;
         private System.Windows.Forms.Button buttonCompression;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogInput;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogOutput;
     }
 }
 
