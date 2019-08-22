@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelInputInputDeitectoryPath = new System.Windows.Forms.Label();
+            this.labelInputInputDirectoryPath = new System.Windows.Forms.Label();
             this.textBoxInputDirectoryPath = new System.Windows.Forms.TextBox();
             this.buttonInputDeitectoryPathDialog = new System.Windows.Forms.Button();
             this.labelTargetFiles = new System.Windows.Forms.Label();
@@ -49,12 +49,12 @@
             // 
             // labelInputInputDeitectoryPath
             // 
-            this.labelInputInputDeitectoryPath.AutoSize = true;
-            this.labelInputInputDeitectoryPath.Location = new System.Drawing.Point(12, 9);
-            this.labelInputInputDeitectoryPath.Name = "labelInputInputDeitectoryPath";
-            this.labelInputInputDeitectoryPath.Size = new System.Drawing.Size(284, 18);
-            this.labelInputInputDeitectoryPath.TabIndex = 0;
-            this.labelInputInputDeitectoryPath.Text = "圧縮するファイルが格納されているフォルダのパス";
+            this.labelInputInputDirectoryPath.AutoSize = true;
+            this.labelInputInputDirectoryPath.Location = new System.Drawing.Point(12, 9);
+            this.labelInputInputDirectoryPath.Name = "labelInputInputDeitectoryPath";
+            this.labelInputInputDirectoryPath.Size = new System.Drawing.Size(284, 18);
+            this.labelInputInputDirectoryPath.TabIndex = 0;
+            this.labelInputInputDirectoryPath.Text = "圧縮するファイルが格納されているフォルダのパス";
             // 
             // textBoxInputDirectoryPath
             // 
@@ -108,6 +108,7 @@
             this.buttonTargetFileLoading.TabIndex = 5;
             this.buttonTargetFileLoading.Text = "ロード";
             this.buttonTargetFileLoading.UseVisualStyleBackColor = true;
+            this.buttonTargetFileLoading.Click += new System.EventHandler(this.buttonTargetFileLoading_Click);
             // 
             // buttonTargetFileAllSelect
             // 
@@ -230,7 +231,7 @@
             this.Controls.Add(this.labelTargetFiles);
             this.Controls.Add(this.buttonInputDeitectoryPathDialog);
             this.Controls.Add(this.textBoxInputDirectoryPath);
-            this.Controls.Add(this.labelInputInputDeitectoryPath);
+            this.Controls.Add(this.labelInputInputDirectoryPath);
             this.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CompressionForm";
@@ -243,7 +244,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelInputInputDeitectoryPath;
+        private System.Windows.Forms.Label labelInputInputDirectoryPath;
         private System.Windows.Forms.TextBox textBoxInputDirectoryPath;
         private System.Windows.Forms.Button buttonInputDeitectoryPathDialog;
         private System.Windows.Forms.Label labelTargetFiles;

@@ -31,7 +31,23 @@ namespace FileCompressor
         /// <param name="e">EventArgs</param>
         private void buttonInputDeitectoryPathDialog_Click(object sender, EventArgs e)
         {
-            this.ShowDialogAndSetPath(this.folderBrowserDialogInput, this.textBoxInputDirectoryPath);
+            if(!this.ShowDialogAndSetPath(this.folderBrowserDialogInput, this.textBoxInputDirectoryPath))
+                return;
+            this.SetTargetFiles();
+        }
+
+        /// <summary>
+        /// 圧縮ファイルロードButton_Click
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="e">EventArgs</param>
+        private void buttonTargetFileLoading_Click(object sender, EventArgs e)
+        {
+            if (this.textBoxInputDirectoryPath.Text.Length == 0)
+            {
+                MessageBox.Show($"{this.labelInputInputDirectoryPath.Text}未入力");
+                return;
+            }
             this.SetTargetFiles();
         }
         #endregion
@@ -42,12 +58,15 @@ namespace FileCompressor
         /// </summary>
         /// <param name="dialog">FolderBrowserDialog</param>
         /// <param name="pathTextBox">パスを設定するTextBox</param>
-        void ShowDialogAndSetPath(FolderBrowserDialog dialog, TextBox pathTextBox)
+        /// <returns>パス設定有無</returns>
+        bool ShowDialogAndSetPath(FolderBrowserDialog dialog, TextBox pathTextBox)
         {
             dialog.SelectedPath = pathTextBox.Text;
             if (dialog.ShowDialog() != DialogResult.OK)
-                return;
+                return false;
+
             pathTextBox.Text = dialog.SelectedPath;
+            return true;
         }
 
         /// <summary>
