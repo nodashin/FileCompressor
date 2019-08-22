@@ -196,6 +196,7 @@
             this.checkBoxOutptDirectoryPath.TabIndex = 13;
             this.checkBoxOutptDirectoryPath.Text = "同じパスに出力する。";
             this.checkBoxOutptDirectoryPath.UseVisualStyleBackColor = true;
+            this.checkBoxOutptDirectoryPath.CheckedChanged += new System.EventHandler(this.checkBoxOutptDirectoryPath_CheckedChanged);
             // 
             // buttonCompression
             // 

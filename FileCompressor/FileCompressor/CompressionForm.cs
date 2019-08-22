@@ -90,6 +90,16 @@ namespace FileCompressor
         {
             this.ShowDialogAndSetPath(this.folderBrowserDialogOutput, this.textBoxOutputDirectoryPath);
         }
+
+        /// <summary>
+        /// 同じパスへの出力Button_Click
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="e">EventArgs</param>
+        private void checkBoxOutptDirectoryPath_CheckedChanged(object sender, EventArgs e)
+        {
+            this.textBoxOutputDirectoryPath.Enabled = !this.checkBoxOutptDirectoryPath.Checked;
+        }
         #endregion
 
         #region メソッド
@@ -139,5 +149,6 @@ namespace FileCompressor
         #endregion
 
         #endregion
+
     }
 }
