@@ -52,6 +52,9 @@
     <Compile Include="CompressionForm.Designer.cs">
       <DependentUpon>CompressionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compression\CompressorBase.cs" />
+    <Compile Include="Compression\GZipCompressor.cs" />
+    <Compile Include="Compression\ZipCompressor.cs" />
     <Compile Include="FileLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
