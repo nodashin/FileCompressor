@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FileCompressor.Extensions;
 
 namespace FileCompressor.Compression
 {
@@ -37,5 +38,13 @@ namespace FileCompressor.Compression
         /// </summary>
         /// <param name="targetFilePaths">対象ファイルパス群</param>
         public abstract void Compress(List<string> targetFilePaths);
+
+        /// <summary>
+        /// 圧縮ファイルパスを取得する。
+        /// </summary>
+        /// <param name="targetPath">圧縮対象パス</param>
+        /// <returns>圧縮ファイルパス</returns>
+        protected string GetArchiveFilePath(string targetPath)
+            => targetPath.RemoveLastPathDelimiter();
     }
 }

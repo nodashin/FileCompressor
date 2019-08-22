@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,7 @@
     <Compile Include="Compression\CompressorFactory.cs" />
     <Compile Include="Compression\GZipCompressor.cs" />
     <Compile Include="Compression\ZipCompressor.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="FileLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
