@@ -47,11 +47,11 @@
             this.folderBrowserDialogOutput = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
-            // labelInputInputDeitectoryPath
+            // labelInputInputDirectoryPath
             // 
             this.labelInputInputDirectoryPath.AutoSize = true;
             this.labelInputInputDirectoryPath.Location = new System.Drawing.Point(12, 9);
-            this.labelInputInputDirectoryPath.Name = "labelInputInputDeitectoryPath";
+            this.labelInputInputDirectoryPath.Name = "labelInputInputDirectoryPath";
             this.labelInputInputDirectoryPath.Size = new System.Drawing.Size(284, 18);
             this.labelInputInputDirectoryPath.TabIndex = 0;
             this.labelInputInputDirectoryPath.Text = "圧縮するファイルが格納されているフォルダのパス";
@@ -95,6 +95,7 @@
             this.listBoxTargetFiles.ItemHeight = 18;
             this.listBoxTargetFiles.Location = new System.Drawing.Point(15, 79);
             this.listBoxTargetFiles.Name = "listBoxTargetFiles";
+            this.listBoxTargetFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxTargetFiles.Size = new System.Drawing.Size(891, 364);
             this.listBoxTargetFiles.TabIndex = 4;
             this.listBoxTargetFiles.ValueMember = "FullName";
@@ -119,6 +120,7 @@
             this.buttonTargetFileAllSelect.TabIndex = 6;
             this.buttonTargetFileAllSelect.Text = "全選択";
             this.buttonTargetFileAllSelect.UseVisualStyleBackColor = true;
+            this.buttonTargetFileAllSelect.Click += new System.EventHandler(this.buttonTargetFileAllSelect_Click);
             // 
             // buttonTargetFileAllCancel
             // 
@@ -129,6 +131,7 @@
             this.buttonTargetFileAllCancel.TabIndex = 7;
             this.buttonTargetFileAllCancel.Text = "全解除";
             this.buttonTargetFileAllCancel.UseVisualStyleBackColor = true;
+            this.buttonTargetFileAllCancel.Click += new System.EventHandler(this.buttonTargetFileAllCancel_Click);
             // 
             // labelCompressionType
             // 
@@ -237,6 +240,7 @@
             this.Name = "CompressionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ファイル圧縮";
+            this.Load += new System.EventHandler(this.CompressionForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
