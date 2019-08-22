@@ -23,6 +23,7 @@ namespace FileCompressor
             InitializeComponent();
         }
 
+        #region イベント
         /// <summary>
         /// 圧縮ファイル格納フォルダパス参照Button_Click
         /// </summary>
@@ -32,7 +33,9 @@ namespace FileCompressor
         {
             this.ShowDialogAndSetPath(this.folderBrowserDialogInput, this.textBoxInputDirectoryPath);
         }
+        #endregion
 
+        #region メソッド
         /// <summary>
         /// FolderBrowserDialogを表示し、パスを設定する。
         /// </summary>
@@ -45,5 +48,6 @@ namespace FileCompressor
                 return;
             pathTextBox.Text = dialog.SelectedPath;
         }
+        #endregion
     }
 }

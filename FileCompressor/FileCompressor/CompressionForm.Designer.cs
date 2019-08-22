@@ -56,12 +56,12 @@
             this.labelInputInputDeitectoryPath.TabIndex = 0;
             this.labelInputInputDeitectoryPath.Text = "圧縮するファイルが格納されているフォルダのパス";
             // 
-            // textBoxInputDeitectoryPath
+            // textBoxInputDirectoryPath
             // 
             this.textBoxInputDirectoryPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxInputDirectoryPath.Location = new System.Drawing.Point(15, 30);
-            this.textBoxInputDirectoryPath.Name = "textBoxInputDeitectoryPath";
+            this.textBoxInputDirectoryPath.Name = "textBoxInputDirectoryPath";
             this.textBoxInputDirectoryPath.Size = new System.Drawing.Size(891, 25);
             this.textBoxInputDirectoryPath.TabIndex = 1;
             // 
@@ -142,6 +142,9 @@
             this.comboBoxCompressionType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxCompressionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCompressionType.FormattingEnabled = true;
+            this.comboBoxCompressionType.Items.AddRange(new object[] {
+            "Zip",
+            "GZip"});
             this.comboBoxCompressionType.Location = new System.Drawing.Point(15, 470);
             this.comboBoxCompressionType.Name = "comboBoxCompressionType";
             this.comboBoxCompressionType.Size = new System.Drawing.Size(121, 26);
