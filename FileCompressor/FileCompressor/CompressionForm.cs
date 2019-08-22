@@ -109,7 +109,8 @@ namespace FileCompressor
         {
             try
             {
-
+                if (!this.CanCompresser())
+                    return;
             }
             catch (Exception ex)
             {
@@ -164,21 +165,48 @@ namespace FileCompressor
         /// <returns>可否</returns>
         bool CanTargetFileLoad()
         {
-            var path = this.textBoxInputDirectoryPath.Text;
+            return this.IsCurrectPath(this.textBoxInputDirectoryPath.Text, this.labelInputInputDirectoryPath.Text);
+        }
+
+        /// <summary>
+        /// 圧縮可能か。
+        /// </summary>
+        /// <returns>可否</returns>
+        bool CanCompresser()
+        {
+            //対象ファイル選択有無をチェックする。
+            if(this.listBoxTargetFiles.SelectedItems.Count == 0)
+            {
+                this.ShowErrorMessage($"{this.labelTargetFiles.Text}未選択");
+                return false;
+            }
+
+            //出力先パスが正常かチェックする。
+            return this.IsCurrectPath(this.textBoxOutputDirectoryPath.Text, this.labelOutputDirectoryPath.Text);
+        }
+
+        /// <summary>
+        /// パスの状態が正しいか。
+        /// </summary>
+        /// <param name="path">検証するパス</param>
+        /// <param name="pathName">エラー発生時にメッセージに表示するパスの名前</param>
+        /// <returns>状態正否</returns>
+        bool IsCurrectPath(string path, string pathName)
+        {
             if (path.Length == 0)
             {
-                this.ShowErrorMessage($"{this.labelInputInputDirectoryPath.Text}未入力");
+                this.ShowErrorMessage($"{pathName}未入力");
                 return false;
             }
-            if(!Directory.Exists(path))
+            if (!Directory.Exists(path))
             {
-                this.ShowErrorMessage($"{this.labelInputInputDirectoryPath.Text}が存在しない");
+                this.ShowErrorMessage($"{pathName}が存在しない");
                 return false;
             }
+
             return true;
         }
         #endregion
-        
 
         #region メッセージ
         /// <summary>
