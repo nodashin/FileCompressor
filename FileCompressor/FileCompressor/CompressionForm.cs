@@ -32,6 +32,7 @@ namespace FileCompressor
         private void buttonInputDeitectoryPathDialog_Click(object sender, EventArgs e)
         {
             this.ShowDialogAndSetPath(this.folderBrowserDialogInput, this.textBoxInputDirectoryPath);
+            this.SetTargetFiles();
         }
         #endregion
 
@@ -47,6 +48,14 @@ namespace FileCompressor
             if (dialog.ShowDialog() != DialogResult.OK)
                 return;
             pathTextBox.Text = dialog.SelectedPath;
+        }
+
+        /// <summary>
+        /// 対象ファイルを設定する。
+        /// </summary>
+        void SetTargetFiles()
+        {
+            this.listBoxTargetFiles.DataSource = new FileLoader(this.textBoxInputDirectoryPath.Text).LoadFiles().ToList();
         }
         #endregion
     }
