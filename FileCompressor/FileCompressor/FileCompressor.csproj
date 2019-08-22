@@ -53,6 +53,7 @@
       <DependentUpon>CompressionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Compression\CompressorBase.cs" />
+    <Compile Include="Compression\CompressorFactory.cs" />
     <Compile Include="Compression\GZipCompressor.cs" />
     <Compile Include="Compression\ZipCompressor.cs" />
     <Compile Include="FileLoader.cs" />

@@ -11,7 +11,7 @@ namespace FileCompressor.Compression
     /// </summary>
     public class ZipCompressor : CompressorBase
     {
-        public ZipCompressor(string outputDirectoryPath, string compressionExtension) : base(outputDirectoryPath, compressionExtension)
+        public ZipCompressor(string outputDirectoryPath) : base(outputDirectoryPath, ".zip")
         {
         }
 

@@ -8,7 +8,7 @@ namespace FileCompressor.Compression
 {
     public class GZipCompressor : CompressorBase
     {
-        public GZipCompressor(string outputDirectoryPath, string compressionExtension) : base(outputDirectoryPath, compressionExtension)
+        public GZipCompressor(string outputDirectoryPath) : base(outputDirectoryPath, ".gz")
         {
         }
 
