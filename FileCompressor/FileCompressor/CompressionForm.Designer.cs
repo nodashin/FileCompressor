@@ -208,6 +208,7 @@
             this.buttonCompression.TabIndex = 14;
             this.buttonCompression.Text = "圧縮";
             this.buttonCompression.UseVisualStyleBackColor = false;
+            this.buttonCompression.Click += new System.EventHandler(this.buttonCompression_Click);
             // 
             // folderBrowserDialogInput
             // 

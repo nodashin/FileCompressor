@@ -100,6 +100,27 @@ namespace FileCompressor
         {
             this.textBoxOutputDirectoryPath.Enabled = !this.checkBoxOutptDirectoryPath.Checked;
         }
+
+        /// <summary>
+        /// 圧縮Button_Click
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="e">EventArgs</param>
+        private void buttonCompression_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex.ToString());
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
         #endregion
 
         #region メソッド
