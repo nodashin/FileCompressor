@@ -90,12 +90,14 @@
             this.listBoxTargetFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxTargetFiles.DisplayMember = "Name";
             this.listBoxTargetFiles.FormattingEnabled = true;
             this.listBoxTargetFiles.ItemHeight = 18;
             this.listBoxTargetFiles.Location = new System.Drawing.Point(15, 79);
             this.listBoxTargetFiles.Name = "listBoxTargetFiles";
             this.listBoxTargetFiles.Size = new System.Drawing.Size(891, 364);
             this.listBoxTargetFiles.TabIndex = 4;
+            this.listBoxTargetFiles.ValueMember = "FullName";
             // 
             // buttonTargetFileLoading
             // 
