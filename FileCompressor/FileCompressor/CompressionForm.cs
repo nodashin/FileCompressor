@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -163,13 +164,19 @@ namespace FileCompressor
         /// <returns>可否</returns>
         bool CanTargetFileLoad()
         {
-            if (this.textBoxInputDirectoryPath.Text.Length == 0)
+            var path = this.textBoxInputDirectoryPath.Text;
+            if (path.Length == 0)
             {
                 this.ShowErrorMessage($"{this.labelInputInputDirectoryPath.Text}未入力");
                 return false;
             }
+            if(!Directory.Exists(path))
+            {
+                this.ShowErrorMessage($"{this.labelInputInputDirectoryPath.Text}が存在しない");
+                return false;
+            }
             return true;
-        } 
+        }
         #endregion
         
 
