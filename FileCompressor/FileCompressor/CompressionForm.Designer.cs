@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelInputInputDeitectoryPath = new System.Windows.Forms.Label();
-            this.textBoxInputDeitectoryPath = new System.Windows.Forms.TextBox();
+            this.textBoxInputDirectoryPath = new System.Windows.Forms.TextBox();
             this.buttonInputDeitectoryPathDialog = new System.Windows.Forms.Button();
             this.labelTargetFiles = new System.Windows.Forms.Label();
             this.listBoxTargetFiles = new System.Windows.Forms.ListBox();
@@ -58,12 +58,12 @@
             // 
             // textBoxInputDeitectoryPath
             // 
-            this.textBoxInputDeitectoryPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxInputDirectoryPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxInputDeitectoryPath.Location = new System.Drawing.Point(15, 30);
-            this.textBoxInputDeitectoryPath.Name = "textBoxInputDeitectoryPath";
-            this.textBoxInputDeitectoryPath.Size = new System.Drawing.Size(891, 25);
-            this.textBoxInputDeitectoryPath.TabIndex = 1;
+            this.textBoxInputDirectoryPath.Location = new System.Drawing.Point(15, 30);
+            this.textBoxInputDirectoryPath.Name = "textBoxInputDeitectoryPath";
+            this.textBoxInputDirectoryPath.Size = new System.Drawing.Size(891, 25);
+            this.textBoxInputDirectoryPath.TabIndex = 1;
             // 
             // buttonInputDeitectoryPathDialog
             // 
@@ -74,6 +74,7 @@
             this.buttonInputDeitectoryPathDialog.TabIndex = 2;
             this.buttonInputDeitectoryPathDialog.Text = "参照";
             this.buttonInputDeitectoryPathDialog.UseVisualStyleBackColor = true;
+            this.buttonInputDeitectoryPathDialog.Click += new System.EventHandler(this.buttonInputDeitectoryPathDialog_Click);
             // 
             // labelTargetFiles
             // 
@@ -223,7 +224,7 @@
             this.Controls.Add(this.listBoxTargetFiles);
             this.Controls.Add(this.labelTargetFiles);
             this.Controls.Add(this.buttonInputDeitectoryPathDialog);
-            this.Controls.Add(this.textBoxInputDeitectoryPath);
+            this.Controls.Add(this.textBoxInputDirectoryPath);
             this.Controls.Add(this.labelInputInputDeitectoryPath);
             this.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -238,7 +239,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelInputInputDeitectoryPath;
-        private System.Windows.Forms.TextBox textBoxInputDeitectoryPath;
+        private System.Windows.Forms.TextBox textBoxInputDirectoryPath;
         private System.Windows.Forms.Button buttonInputDeitectoryPathDialog;
         private System.Windows.Forms.Label labelTargetFiles;
         private System.Windows.Forms.ListBox listBoxTargetFiles;
