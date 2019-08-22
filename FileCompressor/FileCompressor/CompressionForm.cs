@@ -53,11 +53,9 @@ namespace FileCompressor
         /// <param name="e">EventArgs</param>
         private void buttonTargetFileLoading_Click(object sender, EventArgs e)
         {
-            if (this.textBoxInputDirectoryPath.Text.Length == 0)
-            {
-                this.ShowErrorMessage($"{this.labelInputInputDirectoryPath.Text}未入力");
+            if (!CanTargetFileLoad())
                 return;
-            }
+
             this.SetTargetFiles();
         }
 
@@ -157,6 +155,23 @@ namespace FileCompressor
             for (int i = 0; i < this.listBoxTargetFiles.Items.Count; i++)
                 this.listBoxTargetFiles.SetSelected(i, isSelected);
         }
+
+        #region エラーチェック
+        /// <summary>
+        /// 対象ファイルロード可能か。
+        /// </summary>
+        /// <returns>可否</returns>
+        bool CanTargetFileLoad()
+        {
+            if (this.textBoxInputDirectoryPath.Text.Length == 0)
+            {
+                this.ShowErrorMessage($"{this.labelInputInputDirectoryPath.Text}未入力");
+                return false;
+            }
+            return true;
+        } 
+        #endregion
+        
 
         #region メッセージ
         /// <summary>
