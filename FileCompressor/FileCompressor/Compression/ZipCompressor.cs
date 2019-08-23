@@ -35,6 +35,8 @@ namespace FileCompressor.Compression
                 this.CopyFile(f, zipDirectoryPath);
                 //圧縮する。
                 this.CompressFile(zipDirectoryPath);
+                //作成したフォルダを削除する。
+                Directory.Delete(zipDirectoryPath, true);
             }
         }
 
@@ -46,7 +48,7 @@ namespace FileCompressor.Compression
         string CreateDirectory(string targetFilePath)
         {
             var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(targetFilePath);
-            var createDirectoryPath = this.OutputDirectoryPath.AppendPathDelimiter();
+            var createDirectoryPath = this.OutputDirectoryPath.AppendPathDelimiter() + fileNameWithoutExtension;
             Directory.CreateDirectory(createDirectoryPath);
 
             return createDirectoryPath;

@@ -111,6 +111,11 @@ namespace FileCompressor
             {
                 if (!this.CanCompresser())
                     return;
+
+                this.Cursor = Cursors.WaitCursor;
+
+                var compresser = Compression.CompressorFactory.Create(this.comboBoxCompressionType.SelectedIndex, this.GetOutputDirectoryPath());
+                compresser.Compress(this.listBoxTargetFiles.SelectedItems.Cast<FileInfo>().Select(f => f.FullName).ToList());
             }
             catch (Exception ex)
             {
@@ -158,6 +163,13 @@ namespace FileCompressor
                 this.listBoxTargetFiles.SetSelected(i, isSelected);
         }
 
+        /// <summary>
+        /// 出力先ディレクトリパスを取得する。
+        /// </summary>
+        /// <returns>出力先ディレクトリパス</returns>
+        string GetOutputDirectoryPath()
+            => this.checkBoxOutptDirectoryPath.Checked ? this.textBoxInputDirectoryPath.Text : this.textBoxOutputDirectoryPath.Text;
+
         #region エラーチェック
         /// <summary>
         /// 対象ファイルロード可能か。
@@ -182,7 +194,10 @@ namespace FileCompressor
             }
 
             //出力先パスが正常かチェックする。
-            return this.IsCurrectPath(this.textBoxOutputDirectoryPath.Text, this.labelOutputDirectoryPath.Text);
+            if(!this.checkBoxOutptDirectoryPath.Checked)
+                return this.IsCurrectPath(this.textBoxOutputDirectoryPath.Text, this.labelOutputDirectoryPath.Text);
+
+            return true;
         }
 
         /// <summary>
