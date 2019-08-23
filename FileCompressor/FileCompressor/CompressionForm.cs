@@ -112,10 +112,15 @@ namespace FileCompressor
                 if (!this.CanCompresser())
                     return;
 
+                if (!this.ShowQuestionMessage("圧縮します。よろしいですか？"))
+                    return;
+
                 this.Cursor = Cursors.WaitCursor;
 
                 var compresser = Compression.CompressorFactory.Create(this.comboBoxCompressionType.SelectedIndex, this.GetOutputDirectoryPath());
                 compresser.Compress(this.listBoxTargetFiles.SelectedItems.Cast<FileInfo>().Select(f => f.FullName).ToList());
+
+                this.ShowInfomationMessage("圧縮しました。", "完了");
             }
             catch (Exception ex)
             {
@@ -189,7 +194,7 @@ namespace FileCompressor
             //対象ファイル選択有無をチェックする。
             if(this.listBoxTargetFiles.SelectedItems.Count == 0)
             {
-                this.ShowErrorMessage($"{this.labelTargetFiles.Text}未選択");
+                this.ShowErrorMessage($"{this.labelTargetFiles.Text}が選択されていません。");
                 return false;
             }
 
@@ -210,12 +215,12 @@ namespace FileCompressor
         {
             if (path.Length == 0)
             {
-                this.ShowErrorMessage($"{pathName}未入力");
+                this.ShowErrorMessage($"{pathName}が入力されていません。");
                 return false;
             }
             if (!Directory.Exists(path))
             {
-                this.ShowErrorMessage($"{pathName}が存在しない");
+                this.ShowErrorMessage($"{pathName}が存在しません。");
                 return false;
             }
 
@@ -225,13 +230,27 @@ namespace FileCompressor
 
         #region メッセージ
         /// <summary>
+        /// インフォメーションメッセージを表示する。
+        /// </summary>
+        /// <param name="message">メッセージ</param>
+        /// <param name="title">タイトル</param>
+        void ShowInfomationMessage(string message, string title)
+            => MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        /// <summary>
+        /// 確認メッセージを表示する。
+        /// </summary>
+        /// <param name="message">メッセージ</param>
+        /// <returns>OK押下有無</returns>
+        bool ShowQuestionMessage(string message)
+            => MessageBox.Show(message, "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK
+
+        /// <summary>
         /// エラーメッセージを表示する。
         /// </summary>
         /// <param name="message">メッセージ</param>
         void ShowErrorMessage(string message)
-        {
-            MessageBox.Show(message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+            => MessageBox.Show(message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
         #endregion
 
         #endregion
