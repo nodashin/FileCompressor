@@ -45,6 +45,6 @@ namespace FileCompressor.Compression
         /// <param name="targetPath">圧縮対象パス</param>
         /// <returns>圧縮ファイルパス</returns>
         protected string GetArchiveFilePath(string targetPath)
-            => targetPath.RemoveLastPathDelimiter();
+            => targetPath.RemoveLastPathDelimiter() + this.CompressionExtension;
     }
 }
