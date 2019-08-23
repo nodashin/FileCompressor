@@ -243,7 +243,7 @@ namespace FileCompressor
         /// <param name="message">メッセージ</param>
         /// <returns>OK押下有無</returns>
         bool ShowQuestionMessage(string message)
-            => MessageBox.Show(message, "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK
+            => MessageBox.Show(message, "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK;
 
         /// <summary>
         /// エラーメッセージを表示する。
